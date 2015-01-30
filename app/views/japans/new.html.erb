@@ -1,11 +1,11 @@
 <div>
 
-  <%= form_tag('/japans', :method => :post) do %>
+  <%= form_tag('/japans', :method => :post, :multipart => true ) do %>
 
       <h3> 投稿する</h3>
     <input placegolder= "Place" type="string" name ="place">
-    <input placeholder= "Image Url" type="text" name="image">
     <input placeholder = "Category" type="text" name="category">
+    <input type="file" name="image">
     <input type="submit" value="SENT">
   <% end %>
 </div>

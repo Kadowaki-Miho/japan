@@ -1,5 +1,7 @@
-<% @tweets.each do |tweet| %>
- <%= tweet.place %><br>
- <%= tweet.image %><br>
- <%= tweet.category %><br>
+<% @images.each do |image| %>
+
+ <img src="<%= image.image %>">
+ <%= image.tweet.category %><br>
+ <%= image.tweet.place %><br>
+
 <% end %>

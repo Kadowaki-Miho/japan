@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150125055904) do
+ActiveRecord::Schema.define(version: 20150125122855) do
+
+  create_table "images", force: true do |t|
+    t.string   "image"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "tweet_id"
+  end
 
   create_table "tags", force: true do |t|
     t.string   "tagname"
@@ -19,9 +26,13 @@ ActiveRecord::Schema.define(version: 20150125055904) do
     t.datetime "updated_at"
   end
 
+  create_table "tags_tweets", id: false, force: true do |t|
+    t.integer "tweet_id"
+    t.integer "tag_id"
+  end
+
   create_table "tweets", force: true do |t|
     t.string   "place"
-    t.text     "image"
     t.text     "category"
     t.datetime "created_at"
     t.datetime "updated_at"
