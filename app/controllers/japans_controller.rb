@@ -4,7 +4,7 @@ before_action :authenticate_user!, only:[:new,:create]
 # after_action :after_create_image, only:[:create]
 
   def index
-   @tweets = Tweet.all
+   @tweets = Tweet.order("created_at DESC")
   end
 
   def new
