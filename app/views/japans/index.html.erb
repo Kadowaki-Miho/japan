@@ -1,7 +1,4 @@
-<% @images.each do |image| %>
-
- <img src="<%= image.image %>">
- <%= image.tweet.category %><br>
- <%= image.tweet.place %><br>
-
-<% end %>
+<div class="main_box">
+<%= image_tag 'japan-icon.jpg' %>
+    <%= render @tweets %>
+</div>
