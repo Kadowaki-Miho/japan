@@ -9,22 +9,22 @@
 <body>
 
 <header id="header">
-  <div class="logoarea">
-    <a href="/"><%= image_tag 'Tokyo.jpg' %></a>
-      <div class="navi-area">
-        <% if user_signed_in? %>
-          <ul>
-            <li><%= link_to image_tag('tokyo-signout.jpg'), destroy_user_session_path, method: :delete %></li>
-            <li><a href="/japans/new"><%= image_tag 'tokyo-post.jpg' %></a></li>
-            <li><a href="/users/<%= current_user.id %>"><%= image_tag 'tokyo-mypage.jpg' %></a></li>
-        <% else %>
-            <li><%= link_to image_tag('tokyo-signin.jpg'), new_user_session_path, :class => 'post' %></li>
-            <li><%= link_to image_tag('tokyo-signup.jpg'), new_user_registration_path, :class => 'post' %></li>
-        <% end %>
-            <li><a href="/"><%= image_tag 'tokyo-search.jpg' %></a></li>
-            <li><a href="/"><%= image_tag 'tokyo-map.jpg' %></a></li>
-          </ul>
-      </div>
+    <div class="logoarea">
+      <a href="/"><%= image_tag 'Tokyo.jpg' %></a>
+    </div>
+    <div class="navi-area">
+      <ul>
+      <% if user_signed_in? %>
+          <li><a href="/japans/new"><%= image_tag 'tokyo-post.jpg' %></a></li>
+          <li><a href="/users/<%= current_user.id %>"><%= image_tag 'tokyo-mypage.jpg' %></a></li>
+          <li><%= link_to image_tag('tokyo-signout.jpg'), destroy_user_session_path, method: :delete %></li>
+      <% else %>
+          <li><%= link_to image_tag('tokyo-signin.jpg'), new_user_session_path, :class => 'post' %></li>
+          <li><%= link_to image_tag('tokyo-signup.jpg'), new_user_registration_path, :class => 'post' %></li>
+      <% end %>
+          <li class="navi-search"><a href="/"><%= image_tag 'tokyo-search.jpg' %></a></li>
+          <li><a href="/"><%= image_tag 'tokyo-map.jpg' %></a></li>
+      </ul>
     </div>
 </header>
 
