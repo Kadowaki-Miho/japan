@@ -1,25 +1,25 @@
 class JapansController < ApplicationController
 
 before_action :authenticate_user!, only:[:new,:create]
+# after_action :after_create_image, only:[:create]
 
   def index
    @tweets = Tweet.all
-   @images = Image.all
   end
 
   def new
   end
 
   def create
-   Tweet.create(place: params[:place],category: params[:category],user_id: current_user.id)
-   id = Tweet.maximum(:id)
-   Image.create(image: params[:image], tweet_id: id)
+   tweet = Tweet.new(place: create_params[:place],category: create_params[:category],user_id: current_user.id)
+   tweet.set_image_url(create_params[:image])
+   tweet.save
   end
 
   private
 
-
   def create_params
-   params.permit(:place, :category,:user_id,:image,:tweet_id)
+   params.permit(:place, :category,:user_id,:id, :image)
   end
+
 end
