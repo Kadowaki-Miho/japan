@@ -16,10 +16,23 @@ before_action :authenticate_user!, only:[:new,:create]
    tweet.save
   end
 
+  def add_like
+     @like = Like.create(tweet_id: add_like_params[:tweet_id],user_id: current_user.id)
+      respond_to do |format|
+        format.html
+        format.js
+      end
+      #redirect_to :back and return
+  end
+
   private
 
   def create_params
    params.permit(:place, :category,:user_id,:id, :image)
+  end
+
+  def add_like_params
+    params.permit(:tweet_id)
   end
 
 end

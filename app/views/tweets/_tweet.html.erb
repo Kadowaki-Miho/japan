@@ -6,6 +6,16 @@
          <p class="place"><%= tweet.place %></p>
       </div>
         <p class="category"><%= tweet.category %></p>
+
+  <%= form_tag('/likes', :remote => :true, :method => :post) do %>
+    <input type="hidden" value="<%= tweet.id %>" name="tweet_id">
+    <input type="submit" value="LIKE">
+  <% end %>
+
+<div id="like_count">
+  <%= tweet.likes.count %>
+</div>
+
     </li>
   </ul>
 </div>
