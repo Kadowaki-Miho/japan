@@ -1,5 +1,11 @@
 <div class="rank-contents">
-  <p>ここはランキングを入れます</p>
+  <div class="rank-3contents">
+    <% @rank.each_with_index do |rank, i| %>
+      <ul>
+        <li><img src="<%= rank.images[0].image %>" ></li>
+      </ul>
+    <% end %>
+  </div>
 </div>
 
 <div class="main_box">

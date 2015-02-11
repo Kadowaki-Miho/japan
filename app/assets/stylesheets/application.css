@@ -7,13 +7,42 @@ p{
   padding: 0;
 }
 
-
-
 .rank-contents{
-  height: 440px;
+  height: 300px;
   text-align: center;
   margin-bottom: 20px;
   background-color:#fffafa;
+  padding: 45px;
+}
+
+.rank-contents p{
+  margin:0;
+  float: left;
+}
+
+.rank-contents ul{
+  list-style: none;
+  padding:0;
+  margin:0;
+  text-align: right;
+}
+
+.rank-contents ul li{
+  float:left;
+  margin: 45px 10px;
+}
+
+.rank-contents img{
+  max-width: 240px;
+  max-height: 300px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.rank-3contents{
+  background-color: pink;
+  padding: 20px;
+  height: 280px;
 }
 
 /*header*/
@@ -61,7 +90,6 @@ p{
 
 .navi-area ul li{
   display: inline-block;
-  
   margin: 12px 20px 0 0;
   padding: 12px;
   border-left:solid 1px #f0f0f0;

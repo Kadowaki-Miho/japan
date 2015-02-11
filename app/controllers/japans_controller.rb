@@ -1,10 +1,15 @@
 class JapansController < ApplicationController
 
 before_action :authenticate_user!, only:[:new,:create]
+before_action :show
 # after_action :after_create_image, only:[:create]
-
   def index
    @tweets = Tweet.order("created_at DESC")
+  end
+
+  def show
+    rank = Like.group(:tweet_id).order('count_tweet_id DESC').limit(3).count(:tweet_id).keys
+    @rank = rank.map{|tweet_id| Tweet.find(tweet_id)}
   end
 
   def new
